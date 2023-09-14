@@ -1,29 +1,31 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Donut from "../components/Donut.astro";
+import Reel from "../components/Reel.astro";
 ---
 
 <Layout title="Donuts!">
   {/* MAIN----------------------------------------------- */}
-  <main class="w-full min-h-screen bg-[#E6E7E1]">
+  <main class="w-full min-h-screen bg-[#eeefe9] xl:pt-[70px] pt-[2px]">
     {/* BANNER----------------------------------------------- */}
-    <div class="w-full md:h-[882px] h-screen banner relative flex shadow-xl">
+    <div class="w-full md:h-[850px] h-screen banner relative flex shadow-xl">
       {/* BANNER CONTAINER----------------------------------------------- */}
       <div
-        class="max-w-[1500px] w-full mx-auto self-end text-white z-50 flex flex-col gap-4 px-3"
+        class="max-w-[1500px] w-full mx-auto self-end text-white z-40 flex flex-col gap-4 sm:px-10 px-3"
       >
         {/* TITLE----------------------------------------------- */}
-        <div class="text-[min(15vw,80px)] font-semibold">
-          Dive into Donut Paradise!
+        <div class="text-[min(13vw,80px)] font-medium flex flex-col">
+          <div class="mb-[-20px]">Dive into</div>
+          <div>Donut Paradise!</div>
         </div>
         {/* SUBTITLE----------------------------------------------- */}
-        <div class="text-[min(4.5vw,19px)] max-w-[882px] font-light">
+        <div class="text-[min(4.6vw,19px)] max-w-[882px] font-light">
           Join Us in a Journey of Culinary Exploration, Where a World of Flavors
           Awaits in Every Bite. Our Donuts Are More Than Just Pastries; They Are
           Handcrafted Pieces of Art Designed to Elevate Your Senses.
         </div>
         {/* SHOP NOW BUTTON----------------------------------------------- */}
-        <div class="text-[min(3.7vw,16px)] font-semibold flex pb-20 pt-6">
+        <div class="text-[min(4vw,16px)] font-medium flex pb-20 pt-6">
           <div class="bg-[#9959d0] py-[14px] px-7 rounded-full cursor-pointer">
             Shop Now
           </div>
@@ -32,42 +34,204 @@ import Donut from "../components/Donut.astro";
       {/* BOT SHADOW----------------------------------------------- */}
       <div class="w-full h-full bannerShadowBot absolute"></div>
     </div>
-    {/* CATALOGUE CONTAINER----------------------------------------------- */}
 
-    <div class="pt-24 w-full flex flex-col text-[#080808] px-3">
-      {/* TITLE----------------------------------------------- */}
-      <div class="mx-auto font-semibold text-[min(5vw,22px)] tracking-tight">Catalogue</div>
+    {/* CATALOGUE CONTAINER----------------------------------------------- */}
+    <div
+      class="sm:pt-24 pt-20 w-full flex flex-col text-[#080808] sm:px-10 px-3 relative overflow-hidden"
+    >
+      {/* LEFT DESIGN----------------------------------------------- */}
       <div
-        class="font-semibold text-[min(13vw,60px)] mx-auto text-center pt-2 "
+        class="text-[#9959d0] text-[1000px] absolute left-[-300px] mark turn lg:flex hidden"
+      >
+        M
+      </div>
+      {/* RIGHT DESIGN----------------------------------------------- */}
+      <div
+        class="text-[#9959d0] text-[1000px] absolute right-[-300px] mark lg:flex hidden"
+      >
+        M
+      </div>
+      {/* TITLE----------------------------------------------- */}
+      <div class="mx-auto text-[min(6vw,22px)] tracking-tight z-40 wavy">
+        Catalogue
+      </div>
+      <div
+        class="font-medium text-[min(13vw,60px)] mx-auto text-center pt-2 z-40"
       >
         <div>Your Donut</div>
-        <div class="">Adventure Starts Here</div>
+        <div class="flex gap-x-3 flex-wrap mt-[-20px]">
+          <div class="mx-auto mb-[-20px]">Adventure</div>
+          <div class="mx-auto sm:mt-0">Starts Here!</div>
+        </div>
       </div>
       {/* DONUTS CONTAINER----------------------------------------------- */}
       <div
-        class="w-full max-w-[1250px] bg-white rounded-3xl mt-10 grid xl:grid-cols-3 lg:grid-cols-2 grid-rows-2 gap-y-10 py-10 mx-auto"
+        class="w-full max-w-[1250px] bg-white rounded-3xl mt-10 grid xl:grid-cols-3 md:grid-cols-2 grid-rows-2 gap-y-10 sm:py-10 p-3 mx-auto z-40"
       >
-        <Donut name="Snow Donut" price="$1.5/pcs" buy="buyNum1" new_="" />
         <Donut
-          name="Taro Preketek"
+          name="Snow Donut"
+          image="donut1"
+          price="$1.5/pcs"
+          buy="buyNum1"
+          new_=""
+        />
+        <Donut
+          name="Strawberry Whimsie"
+          image="donut6"
           price="$1.2/pcs"
           buy="buyNum2"
           new_="hidden"
         />
         <Donut
-          name="Strawberry Whimsie"
+          name="Caramaelow"
+          image="donut3"
           price="$1.5/pcs"
           buy="buyNum3"
           new_="hidden"
         />
-        <Donut name="Caramaelow" price="$1.5/pcs" buy="buyNum4" new_="hidden" />
-        <Donut name="Doreng" price="$1.5/pcs" buy="buyNum5" new_="" />
         <Donut
-          name="Polisi Bulan Purnama"
+          name="Taro Preketek"
+          image="donut4"
+          price="$1.5/pcs"
+          buy="buyNum4"
+          new_="hidden"
+        />
+        <Donut
+          name="Chocoreng"
+          image="donut5"
+          price="$1.5/pcs"
+          buy="buyNum5"
+          new_=""
+        />
+        <Donut
+          name="Bulan Purnama"
+          image="donut2"
           price="$2/pcs"
           buy="buyNum6"
           new_="hidden"
         />
+      </div>
+    </div>
+    {/* OUR STORY CONTAINER----------------------------------------------- */}
+    <div
+      class="grid xl:grid-cols-2 sm:px-10 px-3 sm:mt-36 mt-20 max-w-[1250px] mx-auto xl:text-start text-center"
+    >
+      <div class="w-[100%] flex justify-end xl:pr-8">
+        <div class="max-w-[510px] xl:mx-0 mx-auto">
+          <div
+            class="text-[min(6vw,22px)] tracking-tight wavy xl:text-start text-center"
+          >
+            Our Story
+          </div>
+          <div
+            class="font-medium text-[min(13vw,60px)] flex flex-col xl:text-start text-center"
+          >
+            <div class="pt-2">Donuts Beyond</div>
+            <div class="mt-[-20px]">Imagination</div>
+          </div>
+          <div class="mt-6 text-[min(4.6vw,19px)] font-light">
+            Our story is rooted in a deep passion for donuts that turned into
+            mission to share the love of these delectable pastries with the
+            world. Our journey began in [Year], when a group of friends united
+            by their unwavering affection for donuts decided to transform their
+            collective enthusiasm into something extraordinary. We weren’t just
+            ordinary individuals; we were donut enthusiasts with stones that
+            ranged from childhood memories of weekend donut adventures to
+            unforgettable first bites of perfectly glazed masterpieces.
+          </div>
+        </div>
+      </div>
+      <div class="w-[100%] flex xl:pt-0 pt-10 xl:pl-8">
+        <div
+          class="h-[min(95vw,550px)] w-full sm:w-[510px] story rounded-3xl shadowStory xl:mx-0 mx-auto xl:flex hidden"
+        >
+        </div>
+      </div>
+    </div>
+    {/* VOUCHERS CONTAINER----------------------------------------------- */}
+    <div
+      class="grid xl:grid-cols-2 sm:px-10 px-3 sm:mt-20 mt-10 max-w-[1250px] mx-auto"
+    >
+      {/* LEFT CONTAINER----------------------------------------------- */}
+      <div class="w-[100%] flex flex-col gap-10">
+        {
+          /* VARIANTS CONTAINER----------------------------------------------- */
+        }
+        <div
+          class="h-[min(90vw,400px)] w-full sm:w-[510px] variants rounded-3xl mx-auto rounded-br-none rounded-bl-none relative shadowStory"
+        >
+          <div class="ml-6 mb-6 bottom-0 left-0 absolute text-white">
+            <div class="text-[min(5vw,22px)] tracking-tight">Voucher</div>
+            <div class="font-medium text-[min(10vw,50px)]">
+              <div>New Variants</div>
+            </div>
+          </div>
+        </div>
+        {
+          /* DISCOUNT CONTAINER----------------------------------------------- */
+        }
+        <div
+          class="h-[min(85vw,385px)] w-full sm:w-[510px] bg-[#9959d0] mx-auto rounded-3xl overflow-hidden relative shadowStory"
+        >
+          <div
+            class="absolute text-[min(150vw,750px)] text-[#a268d5] font-semibold top-[-350px] left-[-100px]"
+          >
+            %
+          </div>
+
+          <div
+            class="py-2 px-6 bg-[#E7FC55] rounded-full font-medium text-[min(3.5vw,15px)] bottom-0 right-0 absolute mb-6 mr-6"
+          >
+            Claim
+          </div>
+          <div class="ml-6 mt-6 top-0 left-0 absolute text-white">
+            <div class="text-[min(5vw,22px)] tracking-tight">Voucher</div>
+            <div class="font-medium text-[min(10vw,50px)]">
+              <div>Get 20% Shipping</div><div class="mt-[-20px]">Voucher</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* RIGHT CONTAINER----------------------------------------------- */}
+      <div class="w-[100%] xl:flex hidden xl:pt-0 pt-10 xl:pl-8">
+        {/* REEL CONTAINER----------------------------------------------- */}
+        <Reel />
+      </div>
+    </div>
+    {/* DIVIDER CONTAINER----------------------------------------------- */}
+    <div class="text-[min(13vw,60px)] sm:mt-40 mt-28 overflow-hidden">
+      <div class="absolute right-[50%] z-40 text-[min(4vw,15px)]">
+        <div class="py-3 px-6 bg-[#BD9A81] text-white rounded-full">
+          Chocolate Series
+        </div>
+      </div>
+
+      <div class="w-[5000px] ml-[-150px] relative">
+        Chocolate Froasted • Jelly Filled • Boston Cream Donut • Chocolate
+        Froasted • Jelly Filled • Boston Cream Donut • Chocolate Froasted •
+        Jelly Filled • Boston Cream Donut
+      </div>
+      <div
+        class="absolute sm:right-[30%] right-[10%] z-40 text-[min(4vw,15px)]"
+      >
+        <div class="py-3 px-6 bg-[#73CDFF] text-white rounded-full">
+          Ice Series
+        </div>
+      </div>
+
+      <div class="w-[5000px] ml-[-100px] relative">
+        Boston Cream Donut • Chocolate Froasted • Jelly Filled • Boston Cream
+        Donut • Jelly Filled Boston Cream Donut • Boston Cream Donut • Chocolate
+        Froasted • Jelly Filled
+      </div>
+      <div class="absolute left-[30%] z-40 text-[min(4vw,15px)]">
+        <div class="py-3 px-6 bg-[#B3EF84] rounded-full">Jelly Series</div>
+      </div>
+
+      <div class="w-[5000px] ml-[-175px] relative">
+        Jelly Filled • Boston Cream Donut • Chocolate Froasted • Boston Cream
+        Donut • Chocolate Froasted • Jelly Filled • Boston Cream Donut •
+        Chocolate Froasted
       </div>
     </div>
     <div class="w-full h-[1000px]"></div>

@@ -4,7 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import Navbar from "../components/Navbar.astro";
+import Navbar from "../components/Navbar.jsx";
 ---
 
 <!doctype html>
@@ -18,11 +18,14 @@ import Navbar from "../components/Navbar.astro";
     <title>{title}</title>
   </head>
   <body class="rope">
-    <Navbar />
+    <Navbar client:load />
     <slot />
   </body>
 </html>
 <style is:global>
+  :root {
+    background-color: #eeefe9;
+  }
   @font-face {
     font-family: rope;
     src: url(../../public/Manrope-VariableFont_wght.ttf);
@@ -31,14 +34,77 @@ import Navbar from "../components/Navbar.astro";
   .rope {
     font-family: rope;
   }
+
+  @font-face {
+    font-family: mark;
+    src: url(../../public/MarckScript-Regular.ttf);
+  }
+
+  .mark {
+    font-family: mark;
+  }
   .donut1 {
     background-image: url(../assets/donut1.webp);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
   }
+  .donut2 {
+    background-image: url(../assets/donut2.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .donut3 {
+    background-image: url(../assets/donut3.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .donut4 {
+    background-image: url(../assets/donut4.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .donut5 {
+    background-image: url(../assets/donut5.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .donut6 {
+    background-image: url(../assets/donut6.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .story {
+    background-image: url(../assets/story.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+  .insta {
+    background-image: url(../assets/insta.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .variants {
+    background-image: url(../assets/variants.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
   .banner {
     background-image: url(../assets/banner.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+  .user {
+    background-image: url(../assets/user.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
@@ -49,6 +115,15 @@ import Navbar from "../components/Navbar.astro";
       rgba(28, 28, 28, 0.89) 1%,
       rgba(28, 28, 28, 0) 40%
     );
+  }
+
+  .storyShadowBot {
+    background: linear-gradient(
+      360deg,
+      rgba(28, 28, 28, 0.764) 1%,
+      rgba(28, 28, 28, 0) 25%
+    );
+    @apply rounded-3xl;
   }
 
   .fixedCenterY {
@@ -65,5 +140,26 @@ import Navbar from "../components/Navbar.astro";
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .turn {
+    transform: scaleX(-1);
+  }
+  .glass {
+    background: rgba(238, 239, 233, 0.89);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5.7px);
+  }
+  .wavy {
+    text-decoration: underline;
+    -webkit-text-decoration-color: #9959d0;
+    text-decoration-color: #9959d0;
+    -webkit-text-decoration-style: wavy;
+    text-decoration-style: wavy;
+  }
+  .shadowStory {
+    box-shadow:
+      rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   }
 </style>
