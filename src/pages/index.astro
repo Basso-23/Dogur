@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Donut from "../components/Donut.astro";
 import Reel from "../components/Reel.astro";
+import Testimonial from "../components/Testimonial.astro";
 ---
 
 <Layout title="Donuts!">
@@ -41,13 +42,13 @@ import Reel from "../components/Reel.astro";
     >
       {/* LEFT DESIGN----------------------------------------------- */}
       <div
-        class="text-[#9959d0] text-[1000px] absolute left-[-300px] mark turn lg:flex hidden"
+        class="text-[#9959d0] text-[1000px] absolute left-[-300px] mark turn sm:flex hidden"
       >
         M
       </div>
       {/* RIGHT DESIGN----------------------------------------------- */}
       <div
-        class="text-[#9959d0] text-[1000px] absolute right-[-300px] mark lg:flex hidden"
+        class="text-[#9959d0] text-[1000px] absolute right-[-300px] mark sm:flex hidden"
       >
         M
       </div>
@@ -66,7 +67,7 @@ import Reel from "../components/Reel.astro";
       </div>
       {/* DONUTS CONTAINER----------------------------------------------- */}
       <div
-        class="w-full max-w-[1250px] bg-white rounded-3xl mt-10 grid xl:grid-cols-3 md:grid-cols-2 grid-rows-2 gap-y-10 sm:py-10 p-3 mx-auto z-40"
+        class="w-full xl:max-w-[1250px] md:max-w-[900px] max-w-[425px] bg-white rounded-3xl mt-10 grid xl:grid-cols-3 md:grid-cols-2 grid-rows-2 gap-y-10 sm:py-10 p-3 mx-auto z-40"
       >
         <Donut
           name="Snow Donut"
@@ -232,6 +233,52 @@ import Reel from "../components/Reel.astro";
         Jelly Filled • Boston Cream Donut • Chocolate Froasted • Boston Cream
         Donut • Chocolate Froasted • Jelly Filled • Boston Cream Donut •
         Chocolate Froasted
+      </div>
+    </div>
+    {
+      /* TESTIMONIALS CONTAINER----------------------------------------------- */
+    }
+    <div class="flex flex-col sm:px-10 px-3 sm:mt-36 mt-20">
+      {/* TITLE----------------------------------------------- */}
+      <div class="mx-auto text-[min(6vw,22px)] tracking-tight z-40 wavy">
+        Testimonial
+      </div>
+      <div
+        class="font-medium text-[min(13vw,60px)] mx-auto text-center pt-2 z-40"
+      >
+        <div>Reviews from</div>
+        <div class="flex gap-x-3 flex-wrap mt-[-20px]">
+          <div class="mx-auto mb-[-20px]">Our Donut</div>
+          <div class="mx-auto sm:mt-0">Lovers</div>
+        </div>
+      </div>
+      {/* REVIEWS DIV----------------------------------------------- */}
+      <div>
+        <div class="w-full xl:max-w-[1250px] max-w-[800px] mt-10 mx-auto z-40 relative">
+          <div>
+            <Testimonial description=" Our story is rooted in a deep passion for donuts that turned into mission to" hidden="" position="left-0" />
+            <Testimonial description="2" hidden="xl:flex hidden" position="fixedCenterX" />
+            <Testimonial description="3" hidden="" position="right-0" />
+          </div>
+          <div class="pt-[200px]">
+            <Testimonial description="4" hidden="" position="left-0" />
+            <Testimonial description="5" hidden="xl:flex hidden" position="fixedCenterX" />
+            <Testimonial description="6" hidden="" position="right-0" />
+          </div>
+          <div class="pt-[200px]">
+            <Testimonial description="7" hidden="" position="left-0" />
+            <Testimonial description="8" hidden="xl:flex hidden" position="fixedCenterX" />
+            <Testimonial description="9" hidden="" position="right-0" />
+          </div>
+          <div class="pt-[200px]">
+            <Testimonial description="1" hidden="" position="left-0" />
+            <Testimonial description="2" hidden="xl:flex hidden" position="fixedCenterX" />
+            <Testimonial description="3" hidden="" position="right-0" />
+          </div>
+          
+
+          
+        </div>
       </div>
     </div>
     <div class="w-full h-[1000px]"></div>

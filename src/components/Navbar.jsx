@@ -33,10 +33,10 @@ const Navbar = () => {
         {/* HIDDEN AFTER XL----------------------------------------------- */}
         <div class="xl:flex hidden">
           {/* MIDDLE CONTENT----------------------------------------------- */}
-          <div class="flex text-[min(4.5vw,16.5px)] gap-20 text-[#313d47] absolute fixedCenterXnY">
+          <div class="flex text-[min(4.5vw,16.5px)] gap-20 text-[#151a1e] absolute fixedCenterXnY">
             <div class="my-auto cursor-pointer">Catalogue</div>
             <div class="my-auto cursor-pointer">About</div>
-            <div class="my-auto cursor-pointer">Testimonials</div>
+            <div class="my-auto cursor-pointer">Testimonial</div>
           </div>
 
           {/* RIGHT CONTENT----------------------------------------------- */}
