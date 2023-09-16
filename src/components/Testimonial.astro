@@ -1,12 +1,10 @@
 ---
-const { description, image, hidden, position } = Astro.props;
+const { description, name, image } = Astro.props;
 ---
 
-<div
-  class={`${hidden} ${position} w-[375px] bg-white rounded-3xl p-5 flex flex-col gap-2`}
->
+<div class={` w-[375px] bg-white rounded-3xl p-5 flex flex-col gap-2`}>
   <div class="w-16 h-16 bg-lime-600 rounded-full"></div>
-  <div class="text-[min(6vw,23px)] font-medium">Username</div>
+  <div class="text-[min(6vw,23px)] font-medium">{name}</div>
   <div class="text-[min(4.6vw,19px)] max-w-[882px] font-light text-[#545454]">
     {description}
   </div>

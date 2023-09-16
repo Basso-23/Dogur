@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Donut from "../components/Donut.astro";
 import Reel from "../components/Reel.astro";
 import Testimonial from "../components/Testimonial.astro";
+import { testimonials } from "../Index/Index_testimonials.js";
+import { donuts } from "../Index/Index_donuts.js";
 ---
 
 <Layout title="Donuts!">
@@ -69,48 +71,18 @@ import Testimonial from "../components/Testimonial.astro";
       <div
         class="w-full xl:max-w-[1250px] md:max-w-[900px] max-w-[425px] bg-white rounded-3xl mt-10 grid xl:grid-cols-3 md:grid-cols-2 grid-rows-2 gap-y-10 sm:py-10 p-3 mx-auto z-40"
       >
-        <Donut
-          name="Snow Donut"
-          image="donut1"
-          price="$1.5/pcs"
-          buy="buyNum1"
-          new_=""
-        />
-        <Donut
-          name="Strawberry Whimsie"
-          image="donut6"
-          price="$1.2/pcs"
-          buy="buyNum2"
-          new_="hidden"
-        />
-        <Donut
-          name="Caramaelow"
-          image="donut3"
-          price="$1.5/pcs"
-          buy="buyNum3"
-          new_="hidden"
-        />
-        <Donut
-          name="Taro Preketek"
-          image="donut4"
-          price="$1.5/pcs"
-          buy="buyNum4"
-          new_="hidden"
-        />
-        <Donut
-          name="Chocoreng"
-          image="donut5"
-          price="$1.5/pcs"
-          buy="buyNum5"
-          new_=""
-        />
-        <Donut
-          name="Bulan Purnama"
-          image="donut2"
-          price="$2/pcs"
-          buy="buyNum6"
-          new_="hidden"
-        />
+        {/* DONUTS MAP----------------------------------------------- */}
+        {
+          donuts.map((item) => (
+            <Donut
+              name={item.name}
+              image={item.image}
+              price={item.price}
+              buy={item.buy}
+              new_={item.new_}
+            />
+          ))
+        }
       </div>
     </div>
     {/* OUR STORY CONTAINER----------------------------------------------- */}
@@ -212,6 +184,7 @@ import Testimonial from "../components/Testimonial.astro";
         Froasted • Jelly Filled • Boston Cream Donut • Chocolate Froasted •
         Jelly Filled • Boston Cream Donut
       </div>
+
       <div
         class="absolute sm:right-[30%] right-[10%] z-40 text-[min(4vw,15px)]"
       >
@@ -225,8 +198,11 @@ import Testimonial from "../components/Testimonial.astro";
         Donut • Jelly Filled Boston Cream Donut • Boston Cream Donut • Chocolate
         Froasted • Jelly Filled
       </div>
+
       <div class="absolute left-[30%] z-40 text-[min(4vw,15px)]">
-        <div class="py-3 px-6 bg-[#B3EF84] rounded-full">Jelly Series</div>
+        <div class="py-3 px-6 bg-[#B3EF84] rounded-full text-black">
+          Jelly Series
+        </div>
       </div>
 
       <div class="w-[5000px] ml-[-175px] relative">
@@ -257,54 +233,15 @@ import Testimonial from "../components/Testimonial.astro";
         <div
           class="w-full max-w-[1250px] mt-10 grid xl:grid-cols-3 md:grid-cols-2 grid-rows-4 gap-y-10 sm:py-10 p-3 mx-auto z-40 relative"
         >
-          <Testimonial
-            hidden=""
-            description="I've never experienced such heavenly donuts! Dogur introduced me to a whole new world of flavors and made me a lifelong donu enthusiast."
-          />
-          <Testimonial
-            hidden=""
-            description="Join Us in a Journey of Culinary Exploration, "
-          />
-          <Testimonial
-            hidden=""
-            description="Join Us in a Journey of Culinary Exploration, Where a World of Flavors Awaits in Every Bite."
-          />
-          <Testimonial
-            hidden=""
-            description="Join Us in a Journey of Culinary Exploration, Where a World of Flavors Awaits in Every Bite."
-          />
-          <Testimonial
-            hidden="xl:flex hidden"
-            description="Join Us in a Journey of Culinary Exploration, Where a World of Flavors Awaits in Every Bite. "
-          />
-          <Testimonial
-            hidden="xl:flex hidden"
-            description="Join Us in a Journey of Culinary Exploration, Where a World of Flavors Awaits in Every Bite."
-          />
-          <Testimonial
-            hidden="xl:flex hidden"
-            description="Join Us in a Journey of Culinary Exploration, Where a World of Flavors Awaits in Every Bite."
-          />
-          <Testimonial
-            hidden="xl:flex hidden"
-            description="Join Us in a Journey of Culinary Exploration, Where a World of Flavors Awaits in Every Bite."
-          />
-          <Testimonial
-            hidden="md:flex hidden"
-            description="Join Us in a Journey of Culinary Exploration, Where a World of Flavors Awaits in Every Bite."
-          />
-          <Testimonial
-            hidden="md:flex hidden"
-            description="Join Us in a Journey of Culinary Exploration, Where a World of Flavors Awaits in Every Bite."
-          />
-          <Testimonial
-            hidden="md:flex hidden"
-            description="Join Us in a Journey of Culinary Exploration, Where a World of Flavors Awaits in Every Bite."
-          />
-          <Testimonial
-            description="Join Us in a Journey of Culinary Exploration, Where a World of Flavors Awaits in Every Bite."
-            hidden="md:flex hidden"
-          />
+          {
+            /* TESTIMONIALS MAP----------------------------------------------- */
+          }
+          {
+            testimonials.map((item) => (
+              <Testimonial name={item.name} description={item.testimonial} />
+            ))
+          }
+
           <div class="w-full h-full absolute reviewShadowBot z-40"></div>
         </div>
       </div>
@@ -314,3 +251,4 @@ import Testimonial from "../components/Testimonial.astro";
 </Layout>
 
 <style></style>
+ ../components/Index_testimonials.js../Index/Index_testimonials.js
