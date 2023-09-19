@@ -1,15 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Donut from "../components/Donut.astro";
+import Navbar from "../components/Navbar.jsx";
+import Donut from "../components/Donut.jsx";
 import Reel from "../components/Reel.astro";
 import Testimonial from "../components/Testimonial.astro";
-import { testimonials } from "../Index/Index_testimonials.js";
+import { testimonials1 } from "../Index/Index_testimonials.js";
+import { testimonials2 } from "../Index/Index_testimonials.js";
+import { testimonials3 } from "../Index/Index_testimonials.js";
 import { donuts } from "../Index/Index_donuts.js";
 ---
 
 <Layout title="Donuts!">
+  <Navbar client:load />
   {/* MAIN----------------------------------------------- */}
-  <main class="w-full min-h-screen bg-[#eeefe9] xl:pt-[70px] pt-[2px]">
+  <main id="/" class="w-full min-h-screen bg-[#eeefe9] xl:pt-[70px] pt-[2px]">
     {/* BANNER----------------------------------------------- */}
     <div class="w-full md:h-[850px] h-screen banner relative flex shadow-xl">
       {/* BANNER CONTAINER----------------------------------------------- */}
@@ -40,6 +44,7 @@ import { donuts } from "../Index/Index_donuts.js";
 
     {/* CATALOGUE CONTAINER----------------------------------------------- */}
     <div
+      id="catalogue"
       class="sm:pt-24 pt-20 w-full flex flex-col text-[#080808] sm:px-10 px-3 relative overflow-hidden"
     >
       {/* LEFT DESIGN----------------------------------------------- */}
@@ -69,12 +74,13 @@ import { donuts } from "../Index/Index_donuts.js";
       </div>
       {/* DONUTS CONTAINER----------------------------------------------- */}
       <div
-        class="w-full xl:max-w-[1250px] md:max-w-[900px] max-w-[425px] bg-white rounded-3xl mt-10 grid xl:grid-cols-3 md:grid-cols-2 grid-rows-2 gap-y-10 sm:py-10 p-3 mx-auto z-40"
+        class="w-full xl:max-w-[1250px] md:max-w-[800px] max-w-[425px] bg-white rounded-3xl mt-10 grid xl:grid-cols-3 md:grid-cols-2 grid-rows-2 gap-y-10 sm:py-10 p-3 mx-auto z-40"
       >
         {/* DONUTS MAP----------------------------------------------- */}
         {
           donuts.map((item) => (
             <Donut
+              client:load
               name={item.name}
               image={item.image}
               price={item.price}
@@ -87,6 +93,7 @@ import { donuts } from "../Index/Index_donuts.js";
     </div>
     {/* OUR STORY CONTAINER----------------------------------------------- */}
     <div
+      id="about"
       class="grid xl:grid-cols-2 sm:px-10 px-3 sm:mt-36 mt-20 max-w-[1250px] mx-auto xl:text-start text-center"
     >
       <div class="w-[100%] flex justify-end xl:pr-8">
@@ -105,8 +112,8 @@ import { donuts } from "../Index/Index_donuts.js";
           <div class="mt-6 text-[min(4.6vw,19px)] font-light">
             Our story is rooted in a deep passion for donuts that turned into
             mission to share the love of these delectable pastries with the
-            world. Our journey began in [Year], when a group of friends united
-            by their unwavering affection for donuts decided to transform their
+            world. Our journey began in 2001, when a group of friends united by
+            their unwavering affection for donuts decided to transform their
             collective enthusiasm into something extraordinary. We weren’t just
             ordinary individuals; we were donut enthusiasts with stones that
             ranged from childhood memories of weekend donut adventures to
@@ -211,10 +218,23 @@ import { donuts } from "../Index/Index_donuts.js";
         Chocolate Froasted
       </div>
     </div>
-    {
-      /* TESTIMONIALS CONTAINER----------------------------------------------- */
-    }
-    <div class="flex flex-col sm:px-10 px-3 sm:mt-36 mt-20">
+    {/* TESTIMONIALS MAIN----------------------------------------------- */}
+    <div
+      id="testimonial"
+      class="flex flex-col sm:px-10 px-3 sm:mt-36 mt-20 relative overflow-hidden"
+    >
+      {/* LEFT DESIGN----------------------------------------------- */}
+      <div
+        class="text-[#9959d0] text-[1000px] absolute left-[-300px] mark turn sm:flex hidden"
+      >
+        M
+      </div>
+      {/* RIGHT DESIGN----------------------------------------------- */}
+      <div
+        class="text-[#9959d0] text-[1000px] absolute right-[-300px] mark sm:flex hidden"
+      >
+        M
+      </div>
       {/* TITLE----------------------------------------------- */}
       <div class="mx-auto text-[min(6vw,22px)] tracking-tight z-40 wavy">
         Testimonial
@@ -228,22 +248,55 @@ import { donuts } from "../Index/Index_donuts.js";
           <div class="mx-auto sm:mt-0">Lovers</div>
         </div>
       </div>
-      {/* REVIEWS DIV----------------------------------------------- */}
-      <div>
-        <div
-          class="w-full max-w-[1250px] mt-10 grid xl:grid-cols-3 md:grid-cols-2 grid-rows-4 gap-y-10 sm:py-10 p-3 mx-auto z-40 relative"
-        >
+      {
+        /* TESTIMONIALS CONTAINER----------------------------------------------- */
+      }
+      <div
+        class="flex w-full xl:max-w-[1225px] max-w-[800px] mt-10 mx-auto z-40 relative"
+      >
+        <div class="flex flex-col gap-y-8 mx-auto">
           {
-            /* TESTIMONIALS MAP----------------------------------------------- */
+            /* TESTIMONIALS MAP COL1----------------------------------------------- */
           }
           {
-            testimonials.map((item) => (
-              <Testimonial name={item.name} description={item.testimonial} />
+            testimonials1.map((item) => (
+              <Testimonial
+                name={item.name}
+                image={item.image}
+                description={item.testimonial}
+              />
             ))
           }
-
-          <div class="w-full h-full absolute reviewShadowBot z-40"></div>
         </div>
+        <div class="xl:flex xl:flex-col gap-y-8 mx-auto hidden">
+          {
+            /* TESTIMONIALS MAP COL2----------------------------------------------- */
+          }
+          {
+            testimonials2.map((item) => (
+              <Testimonial
+                name={item.name}
+                image={item.image}
+                description={item.testimonial}
+              />
+            ))
+          }
+        </div>
+        <div class="lg:flex lg:flex-col gap-y-8 mx-auto hidden">
+          {
+            /* TESTIMONIALS MAP COL3----------------------------------------------- */
+          }
+          {
+            testimonials3.map((item) => (
+              <Testimonial
+                name={item.name}
+                image={item.image}
+                description={item.testimonial}
+              />
+            ))
+          }
+        </div>
+        <div class="w-full h-full absolute reviewShadowBot z-40"></div>
       </div>
     </div>
     <div class="w-full h-[1000px]"></div>
@@ -251,4 +304,4 @@ import { donuts } from "../Index/Index_donuts.js";
 </Layout>
 
 <style></style>
- ../components/Index_testimonials.js../Index/Index_testimonials.js
+ ../components/Donut.jsx/index.js

@@ -4,7 +4,6 @@ interface Props {
 }
 
 const { title } = Astro.props;
-import Navbar from "../components/Navbar.jsx";
 ---
 
 <!doctype html>
@@ -18,7 +17,6 @@ import Navbar from "../components/Navbar.jsx";
     <title>{title}</title>
   </head>
   <body class="rope">
-    <Navbar client:load />
     <slot />
   </body>
 </html>
@@ -109,6 +107,79 @@ import Navbar from "../components/Navbar.jsx";
     background-repeat: no-repeat;
     background-position: top;
   }
+
+  .testimonial_M1 {
+    background-image: url(../assets/testimonial_M1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .testimonial_M2 {
+    background-image: url(../assets/testimonial_M2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .testimonial_M3 {
+    background-image: url(../assets/testimonial_M3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .testimonial_M4 {
+    background-image: url(../assets/testimonial_M4.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .testimonial_M5 {
+    background-image: url(../assets/testimonial_M5.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .testimonial_H1 {
+    background-image: url(../assets/testimonial_H1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .testimonial_H2 {
+    background-image: url(../assets/testimonial_H2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .testimonial_H3 {
+    background-image: url(../assets/testimonial_H3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .testimonial_H4 {
+    background-image: url(../assets/testimonial_H4.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .testimonial_H5 {
+    background-image: url(../assets/testimonial_H5.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .testimonial_H6 {
+    background-image: url(../assets/testimonial_H6.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .testimonial_H7 {
+    background-image: url(../assets/testimonial_H7.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
   .bannerShadowBot {
     background: linear-gradient(
       360deg,
@@ -130,7 +201,7 @@ import Navbar from "../components/Navbar.jsx";
     background: linear-gradient(
       360deg,
       rgb(238, 239, 233) 1%,
-      rgba(238, 239, 233, 0) 50%
+      rgba(238, 239, 233, 0) 40%
     );
   }
 
@@ -169,5 +240,54 @@ import Navbar from "../components/Navbar.jsx";
     box-shadow:
       rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
+  .menuHover {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+  }
+  .menuHover:after {
+    background: none repeat scroll 0 0 transparent;
+    top: 60%;
+    transform: translateY(-50%);
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #9959d0;
+    transition:
+      width 0.3s ease 0s,
+      left 0.3s ease 0s;
+    width: 0;
+  }
+  .menuHover:hover:after {
+    width: 100%;
+    left: 0;
+  }
+
+  .menuSelected {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+  }
+  .menuSelected:after {
+    background: none repeat scroll 0 0 transparent;
+    top: 60%;
+    transform: translateY(-50%);
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #9959d0;
+    width: 100%;
+    left: 0;
+  }
+  .purchaseBtn {
+    transition: all 0.1s ease-out;
+  }
+  .purchaseBtn:active {
+    transform: scale(0.9);
   }
 </style>
