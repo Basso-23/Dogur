@@ -6,6 +6,7 @@ import Menu from "./Menu";
 import Cart from "./Cart";
 import { total } from "../nanoStore.js";
 import { useStore } from "@nanostores/react";
+import { motion as m, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [scroll, setScroll] = useState(true);
@@ -85,17 +86,23 @@ const Navbar = () => {
               onClick={() => {
                 setIsCartOpen(true);
               }}
-              class="my-auto mr-2 text-[min(9vw,25px)] relative"
+              class="my-auto mr-2 text-[min(9vw,25px)] relative cursor-pointer purchaseBtn"
             >
               <HiOutlineShoppingBag />
-              <div className="w-[15px] h-[15px] absolute rounded-full bg-lime-400 top-0 right-0 mr-[-12px] mt-[-5px] flex">
+              <div
+                className={
+                  $total.value === 0
+                    ? "w-[15px] h-[15px] absolute rounded-full bg-[#d1d1d1] top-0 right-0 mr-[-12px] mt-[-5px] flex"
+                    : "w-[15px] h-[15px] absolute rounded-full bg-lime-400 top-0 right-0 mr-[-12px] mt-[-5px] flex"
+                }
+              >
                 <div className="m-auto text-[min(5vw,11px)]">
                   {$total.value}
                 </div>
               </div>
             </div>
             {/* LOGIN BUTTON----------------------------------------------- */}
-            <div class="text-[min(3.5vw,15px)] flex text-white">
+            <div class="text-[min(3.5vw,15px)] flex text-white purchaseBtn">
               <div class="bg-[#9959d0] py-2 px-7 rounded-full cursor-pointer">
                 Login
               </div>
@@ -113,9 +120,22 @@ const Navbar = () => {
       />
 
       {/* CART CONTENT------------------------------------------------- */}
-      {isCartOpen ? (
-        <Cart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
-      ) : null}
+      <AnimatePresence>
+        {isCartOpen ? (
+          <m.div
+            initial={{ x: "40vw", opacity: 1 }}
+            animate={{ x: "0vw", opacity: 1 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeOut",
+              delay: 0,
+            }}
+            exit={{ x: "40vw", opacity: 1 }}
+          >
+            <Cart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+          </m.div>
+        ) : null}
+      </AnimatePresence>
     </div>
   );
 };

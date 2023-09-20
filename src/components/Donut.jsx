@@ -55,8 +55,6 @@ const Donut = ({ name, price, buy, new_, image }) => {
           <div key={keyNum}>
             {keyNum === buy ? (
               <div className="flex flex-col">
-                <div className=" mx-auto">{quantity}</div>
-
                 <div
                   onClick={() => {
                     addTotal();

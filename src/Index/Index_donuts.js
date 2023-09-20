@@ -10,7 +10,7 @@ const donuts = [
   },
   {
     name: "Strawberry Whimsie",
-    image: "donut6",
+    image: "donut2",
     price: "$1.2/pcs",
     buy: "buyNum2",
     new_: "hidden",
@@ -38,7 +38,7 @@ const donuts = [
   },
   {
     name: "Bulan Purnama",
-    image: "donut2",
+    image: "donut6",
     price: "$2/pcs",
     buy: "buyNum6",
     new_: "hidden",
