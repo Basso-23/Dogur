@@ -1,3 +1,5 @@
+![Alt text](https://i.imgur.com/Mm8wOUz.jpeg)
+
 # Astro Starter Kit: Basics
 
 ```sh
